@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+	<head>
+        <link rel="stylesheet" href="TakePhotoView.css"/>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+
+	</head>
+	<body>
+		<div class="layout">
+            <div class="inside" id="inside">
+
+            </div>
+            <div class="outside">
+                <div class="table-row">
+                   <div class="table-cell crop-container">
+                       <div class="crop-view" id="crop-view">
+                           <canvas id="canvas">
+
+                           </canvas>
+                            <div class="no-image-tip">
+                                <input id="real-upload-button" type="file" class="real-upload-button" onchange="loadUpLoadImage()"/>
+                                <button id="upload-button" class="upload-button">点我点我！</button>
+                            </div>
+                       </div>
+                        <div class="table-cell zoom-control" id="zoom-control">
+                            <div class="line" id="line">
+
+                            </div>
+                        </div>
+                       <div class="table-cell button-area" id="button-area">
+                           <button class="confirm-button" id="confirm-button">确定</button>
+                           <button class="reUpload-button" id="reUpload-button">重新上传</button>
+                           <input type="file" class="real-reUpload-button" id="real-reUpload-button"/>
+                       </div>
+
+                   </div>
+                </div>
+            </div>
+        </div>
+        <script src="TakePhotoView.js"></script>
+	</body>
+</html>
