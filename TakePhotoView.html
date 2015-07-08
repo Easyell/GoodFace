@@ -3,6 +3,8 @@
 <html>
 	<head>
         <link rel="stylesheet" href="TakePhotoView.css"/>
+        <script src="exif.js"></script>
+        <script src="binaryajax.js"></script>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width">
 		<title></title>
@@ -20,20 +22,22 @@
                            <canvas id="canvas">
 
                            </canvas>
+                           <img src="mask.png" id="mask_image" class="mask_image" alt=""/>
                             <div class="no-image-tip">
                                 <input id="real-upload-button" type="file" class="real-upload-button" onchange="loadUpLoadImage()"/>
                                 <button id="upload-button" class="upload-button">点我点我！</button>
                             </div>
                        </div>
-                        <div class="table-cell zoom-control" id="zoom-control">
+                        <div class="zoom-control" id="zoom-control">
                             <div class="line" id="line">
-
+                            </div>
+                            <div class="dragable" id="dragable">
                             </div>
                         </div>
-                       <div class="table-cell button-area" id="button-area">
+                       <div class="button-area" id="button-area">
                            <button class="confirm-button" id="confirm-button">确定</button>
                            <button class="reUpload-button" id="reUpload-button">重新上传</button>
-                           <input type="file" class="real-reUpload-button" id="real-reUpload-button"/>
+                           <input type="file" class="real-reUpload-button" id="real-reUpload-button" onchange="loadUpLoadImage()"/>
                        </div>
 
                    </div>
