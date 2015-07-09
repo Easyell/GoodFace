@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width">
+		<title></title>
+        <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+        <link rel="stylesheet" href="ResultView.css"/>
+        <script>
+            wx.config({
+                debug: false,
+                appId: '$!{appId}',
+                timestamp: '$!{timestamp}',
+                nonceStr:  '$!{nonceStr}',
+                signature: '$!{signature}',
+                jsApiList: ['onMenuShareTimeline', 'onMenuShareAppMessage']
+            });
+            wx.ready(function () {
+                app.onShare('一起来刷脸测试吧！');
+            });
+            wx.error(function (res) {
+                alert(res.errMsg);
+            });
+        </script>
+	</head>
+	<body>
+    <img id="background-image" src="IMG_0137.PNG"/>
+    <img id="avatar-image"/>
+	</body>
+    <script src="ResultView.js"></script>
+</html>
