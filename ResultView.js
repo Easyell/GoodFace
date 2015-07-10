@@ -38,17 +38,7 @@ function GetRequest() {
 var cfg = {
     title: '雅顿数钱挑战 - 好礼等你来拿',
     link: 'http://ws.winchance870.com/weixin/arden/index.htm',
-    imgUrl: 'http://ws.winchance870.com/img/share.jpg',
-    success: function () {
-        app.cookie('isShared', true, { expires: 365, path: '/' });
-        cfg.callback();
-    },
-    callback: function () {}
+    imgUrl: 'http://ws.winchance870.com/img/share.jpg'
 };
-
-app.onShare = function (v) {
-    basejs.isString(v) && (cfg.title = v);
-    basejs.isFunction(v) && (cfg.callback = v);
-    wx.onMenuShareTimeline(cfg);
-    wx.onMenuShareAppMessage(cfg);
-};
+wx.onMenuShareTimeline(cfg);
+wx.onMenuShareAppMessage(cfg);

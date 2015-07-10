@@ -1,49 +1,41 @@
-
 <!DOCTYPE html>
 <html>
-	<head>
-        <link rel="stylesheet" href="TakePhotoView.css"/>
-        <script src="exif.js"></script>
-        <script src="binaryajax.js"></script>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width">
-		<title></title>
+<head>
+    <link rel="stylesheet" href="TakePhotoView.css"/>
+    <script src="exif.js"></script>
+    <script src="binaryajax.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title></title>
 
-	</head>
-	<body>
-		<div class="layout">
-            <div class="inside" id="inside">
+</head>
+<body>
+<div class="container-div" id="container-div">
+    <div class="crop-view" id="crop-view">
+        <canvas id="canvas">
 
-            </div>
-            <div class="outside">
-                <div class="table-row">
-                   <div class="table-cell crop-container">
-                       <div class="crop-view" id="crop-view">
-                           <canvas id="canvas">
+        </canvas>
+        <img src="mask.png" id="mask_image" class="mask_image" alt=""/>
 
-                           </canvas>
-                           <img src="mask.png" id="mask_image" class="mask_image" alt=""/>
-                            <div class="no-image-tip">
-                                <input id="real-upload-button" type="file" class="real-upload-button" onchange="loadUpLoadImage()"/>
-                                <button id="upload-button" class="upload-button">点我点我！</button>
-                            </div>
-                       </div>
-                        <div class="zoom-control" id="zoom-control">
-                            <div class="line" id="line">
-                            </div>
-                            <div class="dragable" id="dragable">
-                            </div>
-                        </div>
-                       <div class="button-area" id="button-area">
-                           <button class="confirm-button" id="confirm-button">确定</button>
-                           <button class="reUpload-button" id="reUpload-button">重新上传</button>
-                           <input type="file" class="real-reUpload-button" id="real-reUpload-button" onchange="reloadUpLoadImage()"/>
-                       </div>
-
-                   </div>
-                </div>
-            </div>
+        <div class="no-image-tip">
+            <input id="real-upload-button" type="file" class="real-upload-button" onchange="loadUpLoadImage()"/>
+            <input type="image" src="takephoto_camera_button.png" id="upload-button" class="upload-button"/>
         </div>
-        <script src="TakePhotoView.js"></script>
-	</body>
+    </div>
+    <div class="zoom-control" id="zoom-control">
+        <div class="line" id="line">
+        </div>
+        <div class="dragable" id="dragable">
+        </div>
+    </div>
+    <div class="button-area" id="button-area">
+        <input type="image" src="confirm_button.png" class="confirm-button" id="confirm-button"/>
+        <input type="image" src="re_upload_button.png" class="reUpload-button" id="reUpload-button"/>
+        <input type="file" class="real-reUpload-button" id="real-reUpload-button"
+               onchange="reloadUpLoadImage()"/>
+    </div>
+</div>
+<img src="wxFaceFunctionBackground.png" id="wx_face_function_background"/>
+<script src="TakePhotoView.js"></script>
+</body>
 </html>
