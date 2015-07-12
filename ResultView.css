@@ -12,11 +12,16 @@ body {
 
 #background-image {
     position: absolute;
-    max-width: 414px;
-    max-height: 736px;
+    max-width: 6080px;
+    max-height: 10450px;
     background: #c5a781;
 }
 
 #avatar-image {
     position: absolute;
+}
+
+.result_view_button {
+    position: absolute;
+    opacity: 0;
 }
