@@ -1,11 +1,25 @@
 /**
  * Created by guoshencheng on 7/9/15.
  */
-//var Request = new Object();
-//Request = GetRequest();
+/**
+*Url format
+*http://localhost:8080/ResultView.html?backgroundId=4&imageUrl=url
+**/
+var Request = new Object();
+Request = GetRequest();
 ////var imageUrl = "http://v1.qzone.cc/avatar/201308/22/10/35/521578db0bf52972.jpg!200x200.jpg";
 //var imageUrl = Request['imageUrl'];
+var backgroundId = Request['backgroundId'];
+console.info(backgroundId);
+
 //console.info(imageUrl);
+var backgroundImageUrlsArray = ["/result_view_background_image1.png",
+                                "/result_view_background_image2.png",
+                                "/result_view_background_image3.png",
+                                "/result_view_background_image4.png",
+                                "/result_view_background_image5.png",
+                                "/result_view_background_image6.png",
+                                "/result_view_background_image7.png"];
 var backgourndImage = document.getElementById("background-image");
 var avatarImage = document.getElementById("avatar-image");
 var shareButton = document.getElementById("share_button");
@@ -31,8 +45,17 @@ function isWeixin(){
         return false;
     }
 }
-
 backgourndImage.onload = function () {
+    configurAllContext();
+}
+if (backgroundId) {
+    backgourndImage.src = backgroundImageUrlsArray[backgroundId];
+} else {
+    var randomId = Math.round(Math.random()*6);
+    backgourndImage.src = backgroundImageUrlsArray[randomId];
+}
+
+function configurAllContext () {
     fixBackgroundPosition();
     configureStartButton();
     configureShareButton();
@@ -42,7 +65,6 @@ backgourndImage.onload = function () {
     //}
     //avatarImage.src = imageUrl;
 }
-backgourndImage.src = "/result_view_background_image1.png";
 
 function fixBackgroundPosition () {
     backgourndImage.style.left = (document.body.offsetWidth - backgourndImage.width ) / 2 + "px";
