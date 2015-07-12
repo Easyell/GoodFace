@@ -9,7 +9,6 @@
 **/
 var Request = new Object();
 Request = GetRequest();
-////var imageUrl = "http://v1.qzone.cc/avatar/201308/22/10/35/521578db0bf52972.jpg!200x200.jpg";
 //var imageUrl = Request['imageUrl'];
 var backgroundId = Request['backgroundId'];
 console.info(backgroundId);
