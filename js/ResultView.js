@@ -14,13 +14,13 @@ var backgroundId = Request['backgroundId'];
 console.info(backgroundId);
 
 //console.info(imageUrl);
-var backgroundImageUrlsArray = ["/result_view_background_image1.png",
-                                "/result_view_background_image2.png",
-                                "/result_view_background_image3.png",
-                                "/result_view_background_image4.png",
-                                "/result_view_background_image5.png",
-                                "/result_view_background_image6.png",
-                                "/result_view_background_image7.png"];
+var backgroundImageUrlsArray = ["img/result_view_background_image1.png",
+                                "img/result_view_background_image2.png",
+                                "img/result_view_background_image3.png",
+                                "img/result_view_background_image4.png",
+                                "img/result_view_background_image5.png",
+                                "img/result_view_background_image6.png",
+                                "img/result_view_background_image7.png"];
 var backgourndImage = document.getElementById("background-image");
 var avatarImage = document.getElementById("avatar-image");
 var shareButton = document.getElementById("share_button");
@@ -108,6 +108,10 @@ function configureRuleButton () {
 startButton.onclick = function () {
     window.location.href = "/TakePhotoView.html";
 };
+
+ruleButton.onclick = function () {
+    window.location.href = "RuleView.html";
+}
 
 function GetRequest() {
     var url = location.search; //获取url中"?"符后的字串
