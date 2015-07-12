@@ -4,6 +4,8 @@
 /**
 *Url format
 *http://localhost:8080/ResultView.html?backgroundId=4&imageUrl=url
+ * background can be nil
+ * if background is nil we get a random number for bakgroundImage
 **/
 var Request = new Object();
 Request = GetRequest();
@@ -53,6 +55,7 @@ if (backgroundId) {
 } else {
     var randomId = Math.round(Math.random()*6);
     backgourndImage.src = backgroundImageUrlsArray[randomId];
+    backgroundId = randomId;
 }
 
 function configurAllContext () {
@@ -121,9 +124,9 @@ function GetRequest() {
 }
 
 var cfg = {
-    title: '雅顿数钱挑战 - 好礼等你来拿',
-    link: 'http://ws.winchance870.com/weixin/arden/index.htm',
-    imgUrl: 'http://ws.winchance870.com/img/share.jpg'
+    title: '刷脸游戏 - 好礼等你来拿',
+    link: 'http://ws.winchance870.com/weixin/arden/index.htm',//use url Format
+    imgUrl: 'http://ws.winchance870.com/img/share.jpg'//use imageUrl
 };
 wx.onMenuShareTimeline(cfg);
 wx.onMenuShareAppMessage(cfg);
