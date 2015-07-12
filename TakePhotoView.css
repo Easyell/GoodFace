@@ -26,6 +26,7 @@ div {
 
 .container-div {
     text-align: center;
+    opacity: 0;
 }
 
 .crop-view {
