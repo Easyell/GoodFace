@@ -9,7 +9,7 @@
 **/
 var Request = new Object();
 Request = GetRequest();
-//var imageUrl = Request['imageUrl'];
+var imageUrl = Request['imageUrl'];
 var backgroundId = Request['backgroundId'];
 console.info(backgroundId);
 
@@ -64,10 +64,10 @@ function configurAllContext () {
         configureShareButton();
     }
     configureRuleButton();
-    //avatarImage.onload = function () {
-    //    fixAvatarPosition();
-    //}
-    //avatarImage.src = imageUrl;
+    avatarImage.onload = function () {
+        fixAvatarPosition();
+    }
+    avatarImage.src = imageUrl;
 }
 
 function fixBackgroundPosition () {
@@ -75,10 +75,11 @@ function fixBackgroundPosition () {
 }
 
 function fixAvatarPosition () {
-    avatarImage.style.width = backgourndImage.offsetWidth * 0.25 + "px";
-    avatarImage.style.height = backgourndImage.offsetWidth * 0.25 + "px";
+    avatarImage.style.width = backgourndImage.offsetHeight * (265 / 1645) + "px";
+    avatarImage.style.height = backgourndImage.offsetHeight * (265 / 1645) + "px";
     avatarImage.style.left = (document.body.offsetWidth - avatarImage.width ) / 2 + "px";
-    avatarImage.style.top = backgourndImage.offsetTop + backgourndImage.offsetHeight * 0.2 + "px";
+    avatarImage.style.top = backgourndImage.offsetTop + backgourndImage.offsetHeight * (225 / 1645) + "px";
+    console.info(avatarImage.offsetTop);
 }
 
 function configureShareButton () {
