@@ -1,5 +1,6 @@
 var backgroundImage = document.getElementById("ruleBackground");
 var returnButton = document.getElementById("rule_return");
+var bigReturnButton = document.getElementById("big_return_button");
 var viewport = document.querySelector("meta[name=viewport]");
 var winWidths= window.innerWidth;
 var densityDpi=640/winWidths;
@@ -28,7 +29,15 @@ function configureButtons () {
 	returnButton.style.width = backgroundImage.offsetHeight * (40 / 960) + "px";
 	returnButton.style.top = backgroundImage.offsetHeight * (100 / 960) + "px";
     returnButton.style.left = backgroundImage.offsetHeight * (530 / 960) + "px";
+    bigReturnButton.style.width = backgroundImage.offsetHeight * (100 / 960) + "px";
+    bigReturnButton.style.height = backgroundImage.offsetHeight * (100 / 960) + "px";
+    bigReturnButton.style.top = backgroundImage.offsetHeight * (70 / 960) + "px";
+    bigReturnButton.style.left = backgroundImage.offsetHeight * (500 / 960) + "px";
 }
 returnButton.onclick = function () {
+    history.go(-1);
+}
+
+bigReturnButton.onclick = function () {
     history.go(-1);
 }

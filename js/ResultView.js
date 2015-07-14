@@ -107,11 +107,11 @@ function configureRuleButton () {
 }
 
 startButton.onclick = function () {
-    window.location.href = "/TakePhotoView.html";
+    window.location.href = "/TakePhotoView.htm";
 };
 
 ruleButton.onclick = function () {
-    window.location.href = "RuleView.html";
+    window.location.href = "RuleView.htm";
 }
 
 function GetRequest() {
@@ -129,8 +129,8 @@ function GetRequest() {
 
 var cfg = {
     title: '刷脸游戏 - 好礼等你来拿',
-    link: 'http://ws.winchance870.com/weixin/arden/index.htm',//use url Format
-    imgUrl: 'http://ws.winchance870.com/img/share.jpg'//use imageUrl
+    link: window.location.href + "&backgroundId=" + backgroundId, //use url Format
+    imgUrl: imageUrl //use imageUrl
 };
 wx.onMenuShareTimeline(cfg);
 wx.onMenuShareAppMessage(cfg);
